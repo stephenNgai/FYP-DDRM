@@ -74,6 +74,42 @@
       "artifacts": [
         "console"
       ]
+    },
+    "/Users/stephenngai/Desktop/CS4514 FYP/DDRM/smart-contracts/contracts/DRMarketPlace.sol": {
+      "lastModificationDate": 1711361088148,
+      "contentHash": "24056ea99653279c466325456db28dd5",
+      "sourceName": "contracts/DRMarketPlace.sol",
+      "solcConfig": {
+        "version": "0.8.24",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "DRMarketPlace"
+      ]
     }
   }
 }

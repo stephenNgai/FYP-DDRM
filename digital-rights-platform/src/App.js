@@ -1,48 +1,37 @@
 import React from "react";
-import { Container, Navbar, Nav, NavDropdown } from "react-bootstrap";
+import { Routes, Route } from "react-router-dom";
+import Header from "./components/Header/Header";
+import Footer from "./components/Footer/Footer";
+import ContentList from "./components/ContentList/ContentList";
+import ContentDetail from "./components/ContentDetail/ContentDetail";
+import ContentUpload from "./components/ContentUpload/ContentUpload";
+import UserDashboard from "./components/UserDashboard/UserDashboard";
+import PurchaseConfirmation from "./components/PurchaseConfirmation/PurchaseConfirmation";
+import ConnectMetaMaskButton from "./components/ConnectMetaMaskButton/ConnectMetaMaskButton";
 
 const App = () => {
   return (
-    <div className="App">
-      <Navbar bg="light" expand="lg">
-        <Container>
-          <Navbar.Brand href="#home">OpenSea</Navbar.Brand>
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="me-auto">
-              <Nav.Link href="#home">Stats</Nav.Link>
-              <Nav.Link href="#link">Create</Nav.Link>
-              <NavDropdown title="All" id="basic-nav-dropdown">
-                <NavDropdown.Item href="#action/3.1">Art</NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.2">Gaming</NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.3">
-                  Memberships
-                </NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.4">PFPs</NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.5">Music</NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.6">
-                  Photography
-                </NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.7">Sports</NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.8">
-                  Trading Cards
-                </NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.9">Utility</NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.10">
-                  Virtual Worlds
-                </NavDropdown.Item>
-              </NavDropdown>
-            </Nav>
-            <Nav>
-              <Nav.Link href="#home">Login</Nav.Link>
-              <Nav.Link href="#link">Sign Up</Nav.Link>
-            </Nav>
-          </Navbar.Collapse>
-        </Container>
-      </Navbar>
-
-      <div className="main-content">{/* Add your main content here */}</div>
-    </div>
+    <>
+      <Header />
+      <main>
+        {/* React Router v6 uses "Routes" instead of "Switch" */}
+        <Routes>
+          {/* Define the routes for the various components here */}
+          <Route path="/" element={<ContentList />} />
+          <Route path="/content/:id" element={<ContentDetail />} />
+          <Route path="/upload" element={<ContentUpload />} />
+          <Route path="/dashboard" element={<UserDashboard />} />
+          <Route
+            path="/purchase-confirmation"
+            element={<PurchaseConfirmation />}
+          />
+          {/* Example of a route that might be conditionally rendered */}
+          <Route path="/connect-wallet" element={<ConnectMetaMaskButton />} />
+          {/* Add other routes as needed */}
+        </Routes>
+      </main>
+      <Footer />
+    </>
   );
 };
 
