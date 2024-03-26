@@ -12,6 +12,8 @@ contract DRMarketplace {
         if (price <= 0) {
             revert DRMarketplace_PriceMustBeGreaterThanZero();
         }
+        // 1. Send the DR to the contract. Transfer -> Contract "hold" the DR.
+        // 2. Owner
     }
 }
 
