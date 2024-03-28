@@ -39,9 +39,13 @@ const theme = createTheme({
       default: "#121212", // This sets the default background color
     },
     secondary: {
-      main: "#9c27b0", // This sets the main secondary color to purple
+      main: "#FFFFFF", // This sets the main secondary color to purple
     },
     // You can add other color overrides here if needed
+  },
+  typography: {
+    fontFamily: '"Dosis", sans-serif', // Set Dosis as the default font family
+    // You can also add other typography-related configurations here
   },
   // You can also customize other theme settings like typography, etc.
 });
